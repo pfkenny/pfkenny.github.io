@@ -8,5 +8,4 @@ header:
   overlay_image: hhouse.jpg
   cta_label: "Reserva De Plaza"
   cta_url: "https://happyhousetoledo.es/reserva-de-plaza.docx"
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
