@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "d"
 layout: splash
 permalink: /
 header:
