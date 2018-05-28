@@ -1,5 +1,5 @@
 ---
-title: "d"
+title: " "
 layout: splash
 permalink: /
 header:
@@ -8,4 +8,5 @@ header:
   overlay_image: happyhousev2.png
   cta_label: "Reserva De Plaza"
   cta_url: "https://happyhousetoledo.es/reserva-de-plaza.docx"
+excerpt: " "
 ---
