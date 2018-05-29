@@ -17,3 +17,4 @@ info@happyhousetoledo.es
 Descargue [aquí](https://happyhousetoledo.es/reserva-de-plaza.docx) su Solicitud de Plaza
 Envíela a [info@happyhousetoledo.es](mailto:info@happyhousetoledo.es)'
 ---
+{% include feature_row id="intro" type="center" %}
