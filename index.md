@@ -5,9 +5,9 @@ permalink: /
 header:
   overlay_color: "#000"
   overlay_filter: "0.2"
-  overlay_image: hhousev2widentall.jpg
-  cta_label: "Reserva De Plaza"
-  cta_url: "https://happyhousetoledo.es/reserva-de-plaza.docx"
+  overlay_image: hhousev3widentall.jpg
+  cta_label: "Solicitud De Plaza"
+  cta_url: "https://happyhousetoledo.es/Solicitud-De-Plaza.docx"
 excerpt: "Próximamente!
 Estamos construyendo nuestra web"
 intro: 
