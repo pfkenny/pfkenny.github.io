@@ -1,18 +1,11 @@
 # Authors
 
-Billy Rick:
-  name        : "Billy Rick"
-  uri         : "http://thewhip.com"
-  email       : "billy@rick.com"
-  bio         : "What do you want, jewels? I am a very extravagant man."
-  avatar      : "/assets/images/bio-photo-2.jpg"
-  twitter     : "extravagantman"
-  google_plus : "BillyRick"
-
-Cornelius Fiddlebone:
-  name        : "Cornelius Fiddlebone"
-  email       : "cornelius@thewhip.com"
-  bio         : "I ordered what?"
-  avatar      : "/assets/images/bio-photo.jpg"
-  twitter     : "rhymeswithsackit"
-  google_plus : "CorneliusFiddlebone"
+Happy House:
+  name        : "Happy House"
+  uri         : "https://happyhousetoledo.es/"
+  email       : "info@happyhousetoledo.es"
+  bio         : "Nueva apertura en Argés. Happy House English School. English for all the family con Profesores nativos. Todas las edades!"
+  avatar      : "/assets/images/happyhouse-avatar.jpg"
+  twitter     : "happyhousearges"
+  facebook    : "happyhousetoledo"
+  location    : "Argés, Toledo, España"

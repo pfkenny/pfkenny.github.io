@@ -132,6 +132,45 @@ analytics:
 #  xing             :
 #  youtube          : # "https://youtube.com/c/MichaelRoseDesign"
 
+# Site Author
+author:
+  name        : "Happy House"
+  uri         : "https://happyhousetoledo.es/"
+  email       : "info@happyhousetoledo.es"
+  bio         : "Nueva apertura en Argés. Happy House English School. English for all the family con Profesores nativos. Todas las edades!"
+  avatar      : "/assets/images/happyhouse-avatar.jpg"
+  twitter     : "happyhousearges"
+  facebook    : "happyhousetoledo"
+  location    : "Argés, Toledo, España"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      # url: mailto:info@happyhousetoledo.es
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      # url: "https://happyhousetoledo.es/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      # url: "https://twitter.com/happyhousearges"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      # url: "https://www.facebook.com/happyhousetoledo/"
+
+# Site Footer
+footer:
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: mailto:info@happyhousetoledo.es
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://happyhousetoledo.es"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/happyhousearges"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      url: "https://www.facebook.com/happyhousetoledo"
 
 # Reading Files
 include:
