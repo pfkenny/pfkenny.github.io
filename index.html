@@ -16,5 +16,61 @@ intro:
 info@happyhousetoledo.es
 Descargue [aquí](https://happyhousetoledo.es/Solicitud-De-Plaza.docx) su Solicitud de Plaza
 Envíela a [info@happyhousetoledo.es](mailto:info@happyhousetoledo.es)'
+
+feature_row:
+  - image_path: assets/images/open-small.jpg
+    alt: "About Happy House"
+    title: "We're Open"
+    excerpt: "We are now open for busines at our **new** purpose built premises"
+    url: "/about/"
+    btn_label: "Take a tour"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/teacher-small.jpg
+    image_caption: "Need Photo of Angie & Kev!"
+    alt: "Angie and Kev"
+    title: "Staff"
+    excerpt: "Hi, we are Angie and Kevin. We are native english speakers."
+    url: "/about/#Staff"
+    btn_label: "Meet Us"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/courses-small.jpg
+    title: "Courses"
+    excerpt: "Learn more about our great courses for adults and children"
+    url: "/courses/"
+    btn_label: "Learn"
+    btn_class: "btn--primary"
+feature_row2:
+  - image_path: /assets/images/examprep.jpg
+    alt: "Exam Preparation"
+    title: "Exams"
+    excerpt: 'We can help you prepare for your exams'
+    url: "/exams/"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+feature_row3:
+  - image_path: /assets/images/open-small.jpg
+    alt: "placeholder image 2"
+    title: "Placeholder Image Right Aligned"
+    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Right aligned with `type="right"`'
+    url: "#test-link"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+feature_row4:
+  - image_path: /assets/images/open-small.jpg
+    alt: "placeholder image 2"
+    title: "Placeholder Image Center Aligned"
+    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Centered with `type="center"`'
+    url: "#test-link"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+
 ---
 {% include feature_row id="intro" type="center" %}
+
+{% include feature_row %}
+
+{% include feature_row id="feature_row2" type="left" %}
+
+{% include feature_row id="feature_row3" type="right" %}
+
+{% include feature_row id="feature_row4" type="center" %}
