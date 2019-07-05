@@ -70,27 +70,30 @@ imgElement.onload = function() {
       }
       approx.delete();
     }
-    //Ensure that the document is within the capture area (In this case it is 30 pixels in from each edge of the 300x238 window)
-    let x1 = countours.get(largestCountour).data32S[0];
-    let y1 = countours.get(largestCountour).data32S[1];
-    let x2 = countours.get(largestCountour).data32S[2];
-    let y2 = countours.get(largestCountour).data32S[3];
-    let x3 = countours.get(largestCountour).data32S[4];
-    let y3 = countours.get(largestCountour).data32S[5];
-    let x4 = countours.get(largestCountour).data32S[6];
-    let y4 = countours.get(largestCountour).data32S[7];
-    let top = Math.min(y1, y2, y3, y4);
-    let bottom = Math.max(y1, y2, y3, y4);
-    let left = Math.min(x1, x2, x3, x4);
-    let right = Math.max(x1, x2, x3, x4);
-    
-    //If the doc is not in the capture area mark it red, otherwise show it in green
-    let color = new cv.Scalar(0, 255, 0, 255);
-    if ((top < 30) || (bottom > 210) || (left < 30) || (right > 270))
+    if (largestContour > 0)
     {
-        color = new cv.Scalar(255, 0, 0, 255);
+        //Ensure that the document is within the capture area (In this case it is 30 pixels in from each edge of the 300x238 window)
+        let x1 = contours.get(largestContour).data32S[0];
+        let y1 = contours.get(largestContour).data32S[1];
+        let x2 = contours.get(largestContour).data32S[2];
+        let y2 = contours.get(largestContour).data32S[3];
+        let x3 = contours.get(largestContour).data32S[4];
+        let y3 = contours.get(largestContour).data32S[5];
+        let x4 = contours.get(largestContour).data32S[6];
+        let y4 = contours.get(largestContour).data32S[7];
+        let top = Math.min(y1, y2, y3, y4);
+        let bottom = Math.max(y1, y2, y3, y4);
+        let left = Math.min(x1, x2, x3, x4);
+        let right = Math.max(x1, x2, x3, x4);
+
+        //If the doc is not in the capture area mark it red, otherwise show it in green
+        let color = new cv.Scalar(0, 255, 0, 255);
+        if ((top < 30) || (bottom > 210) || (left < 30) || (right > 270))
+        {
+            color = new cv.Scalar(255, 0, 0, 255);
+        }
+        cv.drawContours(dst, contours, largestContour, color, 2, cv.LINE_8);
     }
-    cv.drawContours(dst, contours, largestContour, color, 2, cv.LINE_8);
     cv.imshow('canvasOutput', dst);
     mat.delete();
     dst.delete();
