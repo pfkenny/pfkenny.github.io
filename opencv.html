@@ -55,7 +55,7 @@ imgElement.onload = function() {
     for (let i = 0; i < contours.size(); ++i) {
       let curCnt = contours.get(i);
       let perimeter = cv.arcLength(curCnt, true);
-      let approx = new cv.MatVector();
+      let approx = new cv.Mat();
       cv.approxPolyDP(curCnt, approx, 0.02 * perimeter, true);
       console.log("Sides:"+approx.rows);
       if (approx.rows == 4) {
