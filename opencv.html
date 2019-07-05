@@ -73,14 +73,17 @@ imgElement.onload = function() {
     if (largestContour > 0)
     {
         //Ensure that the document is within the capture area (In this case it is 30 pixels in from each edge of the 300x238 window)
-        let x1 = contours.get(largestContour).data32S[0];
-        let y1 = contours.get(largestContour).data32S[1];
-        let x2 = contours.get(largestContour).data32S[2];
-        let y2 = contours.get(largestContour).data32S[3];
-        let x3 = contours.get(largestContour).data32S[4];
-        let y3 = contours.get(largestContour).data32S[5];
-        let x4 = contours.get(largestContour).data32S[6];
-        let y4 = contours.get(largestContour).data32S[7];
+        let perimeter = cv.arcLength(contours.get(largestContour), true);
+        let approx = new cv.Mat();
+        cv.approxPolyDP(contours.get(largestContour), approx, 0.02 * perimeter, true);
+        let x1 = approx.data32S[0];
+        let y1 = approx.data32S[1];
+        let x2 = approx.data32S[2];
+        let y2 = approx.data32S[3];
+        let x3 = approx.data32S[4];
+        let y3 = approx.data32S[5];
+        let x4 = approx.data32S[6];
+        let y4 = approx.data32S[7];
         let top = Math.min(y1, y2, y3, y4);
         let bottom = Math.max(y1, y2, y3, y4);
         let left = Math.min(x1, x2, x3, x4);
@@ -93,6 +96,7 @@ imgElement.onload = function() {
             color = new cv.Scalar(255, 0, 0, 255);
         }
         cv.drawContours(dst, contours, largestContour, color, 2, cv.LINE_8);
+        approx.delete();
     }
     cv.imshow('canvasOutput', dst);
     mat.delete();
