@@ -78,8 +78,9 @@ imgElement.onload = function() {
     contours.delete();
     var cn1 = document.getElementById('canvasOutput');
     var context = cn1.getContext('2d');
-    context.fillStyle = "rgba(0, 0, 0, 0.7)";  // last value is alpha [0.0, 1.0]
-    context.fillRect(50, 50, 200, 138);
+    context.lineWidth = "25";
+    context.strokeStyle = "rgba(0, 0, 0, 0.7)";  // last value is alpha [0.0, 1.0]
+    context.strokeRect(25, 25, 250, 188);
 };
 
 function onOpenCvReady() { // eslint-disable-line no-unused-vars
