@@ -3,3 +3,16 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 .c9/
+app/
+bin/
+config/
+db/
+lib/
+log/
+public/
+test/
+vendor/
+config.ru
+README.md
+README.rdoc
+Rakefile

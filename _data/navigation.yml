@@ -1,26 +1,14 @@
 # main links
 main:
-  - title: "Courses"
+  - title: "Nuestros Cursos"
     url: /courses/
-    children:
-      - title: "Children"
-        url: /courses/#Children
-      - title: "Adults"
-        url: /courses/#Adults
-  - title: "Official Exams"
+  - title: "Examénes Oficiales"
     url: /exams/
-  - title: "About"
+  - title: "Nuestro Centro"
     url: /about/
     children:
-      - title: "Staff"
+      - title: "Nuestros Profesores"
         url: /about/#Staff
-      - title: "Facilities"
-        url: /about/#Facilities
-      - title: "Equipment"
-        url: /about/#Equipment
-      - title: "Method"
-        url: /about/#Method
-  - title: "Blog"
-    url: /year-archive/
-  - title: "Contact"
+  - title: "
+Contacto"
     url: /contact/

@@ -1,34 +1,21 @@
 ---
 permalink: /about/
-title: "About"
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.2"
+  overlay_image: "/assets/images/about-wide.jpg"
+title: "Nuestro Centro"
 excerpt: "Happy House English School"
-last_modified_at: 2018-10-04T22:42:24-01:00
+last_modified_at: 2019-11-12T22:42:24-01:01
 toc: true
 ---
+## Nuestro Centro
 
-About Happy House
+Nuestra Academia de Inglés en Argés, Toledo abrió sus puertas en 2018. Nuestro objetivo es brindar la oportunidad de aprender inglés de la forma más natural, con profesores nativos en grupos reducidos y con objetivos claros y alcanzables para que el aprendizaje sea real, sostenible y duradero.
 
-## Staff
+## Nuestros Profesores
 
-### Angie
-
-About Angie
-
-### Kevin
-
-About Kevin
-
-## Facilities
-
-- Cool Building
- 
-## Equipment
-
-- Interactive Screen etc.
-
-## Method
-
-- Cool Teaching Method
+Profesores nativos altamente cualificados y titulados en el campo de la enseñanza de inglés como lengua extranjera (TEFL). Examinadores oficiales.
 
 ---
 Happy House English School, learning for all the family.

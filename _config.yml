@@ -141,8 +141,8 @@ author:
   avatar      : "/assets/images/happyhouse-avatar.jpg"
   twitter     : "happyhousearges"
   facebook    : "happyhousetoledo"
-  instagram   : "happy_house_toledo"
-  location    : "Argés, Toledo, España"
+  instagram   : "happy.house.toledo"
+  location    : "Calle Chorillo 4, Argés, Toledo 45122"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -158,7 +158,7 @@ author:
       # url: "https://www.facebook.com/happyhousetoledo/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram-square"
-      # url: "https://www.instagram.com/happy_house_toledo/"
+      # url: "https://www.instagram.com/happy.house.toledo/"
 
 # Site Footer
 footer:
@@ -177,7 +177,7 @@ footer:
       url: "https://www.facebook.com/happyhousetoledo"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram-square"
-      #url: "https://www.instagram.com/happy_house_toledo/"
+      #url: "https://www.instagram.com/happy.house.toledo/"
 
 # Reading Files
 include:
