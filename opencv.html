@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src *; img-src * 'self' data: https: blob:; script-src 'self' https://emea-app.identityx-cloud.com/ 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; connect-src 'self' data: ws: https:">
+<title>OpenCV Test</title>
+<link href="js_example_style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<H1>OpenCV Test</H1>
+<p id="status">OpenCV.js is loading...</p>
+<div>
+<p class="err" id="errorMessage"></p>
+</div>
+<div>
+    <table cellpadding="0" cellspacing="0" width="0" border="0">
+    <tr>
+        <td>
+            <img id="imageSrc" alt="No Image" class="small" />
+        </td>
+        <td>
+            <canvas id="canvasOutput" class="small" height="300px"></canvas>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="caption">imageSrc <input type="file" id="fileInput" name="file" accept="image/*" /></div>
+        </td>
+        <td>
+            <div class="caption">canvasOutput</div>
+        </td>
+    </tr>
+    </table>
+</div>
+<script src="utils.js" type="text/javascript"></script>
+<script type="text/javascript">
+let imgElement = document.getElementById('imageSrc');
+let inputElement = document.getElementById('fileInput');
+inputElement.addEventListener('change', (e) => {
+    imgElement.src = URL.createObjectURL(e.target.files[0]);
+}, false);
+
+imgElement.onload = function() {
+    let mat = cv.imread(imgElement);
+    let dst = cv.imread(imgElement);
+    let ksize = new cv.Size(5, 5);
+    cv.cvtColor(mat, mat, cv.COLOR_RGBA2GRAY, 0);
+    cv.GaussianBlur(mat, mat, ksize, 0, 0, cv.BORDER_DEFAULT);
+    cv.Canny(mat, mat, 75, 200, 3, false);
+    let contours = new cv.MatVector();
+    let hierarchy = new cv.Mat();
+    cv.findContours(mat, contours, hierarchy, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE);
+    let largestContour = 0;
+    let largestArea = 0;
+    for (let i = 0; i < contours.size(); ++i) {
+      let curCnt = contours.get(i);
+      let perimeter = cv.arcLength(curCnt, true);
+      let approx = new cv.Mat();
+      cv.approxPolyDP(curCnt, approx, 0.02 * perimeter, true);
+      console.log("Sides:"+approx.rows);
+      if (approx.rows == 4) {
+        let curArea = cv.contourArea(curCnt, false);
+        console.log("Area:"+curArea);
+        //Only interested in contours that are large enough
+        if ((curArea > 25000) && (curArea > largestArea))
+        {
+          largestArea=curArea;
+          largestContour = i;
+        }
+      }
+      approx.delete();
+    }
+    if (largestContour > 0)
+    {
+        //Ensure that the document is within the capture area (In this case it is 30 pixels in from each edge of the 300x238 window)
+        let perimeter = cv.arcLength(contours.get(largestContour), true);
+        let approx = new cv.Mat();
+        cv.approxPolyDP(contours.get(largestContour), approx, 0.02 * perimeter, true);
+        let x1 = approx.data32S[0];
+        let y1 = approx.data32S[1];
+        let x2 = approx.data32S[2];
+        let y2 = approx.data32S[3];
+        let x3 = approx.data32S[4];
+        let y3 = approx.data32S[5];
+        let x4 = approx.data32S[6];
+        let y4 = approx.data32S[7];
+        let top = Math.min(y1, y2, y3, y4);
+        let bottom = Math.max(y1, y2, y3, y4);
+        let left = Math.min(x1, x2, x3, x4);
+        let right = Math.max(x1, x2, x3, x4);
+
+        //If the doc is not in the capture area mark it red, otherwise show it in green
+        let color = new cv.Scalar(0, 255, 0, 255);
+        if ((top < 30) || (bottom > 210) || (left < 30) || (right > 270))
+        {
+            color = new cv.Scalar(255, 0, 0, 255);
+        }
+        cv.drawContours(dst, contours, largestContour, color, 2, cv.LINE_8);
+        approx.delete();
+    }
+    cv.imshow('canvasOutput', dst);
+    mat.delete();
+    dst.delete();
+    hierarchy.delete();
+    contours.delete();
+    
+    //Place a semi opaque overlay over the non-capture area to show it
+    var cn1 = document.getElementById('canvasOutput');
+    var context = cn1.getContext('2d');
+    context.lineWidth = "30";
+    context.strokeStyle = "rgba(0, 0, 0, 0.7)";  // last value is alpha [0.0, 1.0]
+    context.strokeRect(15, 15, 270, 208);
+};
+
+function onOpenCvReady() { // eslint-disable-line no-unused-vars
+    document.getElementById('status').innerHTML = '<b>OpenCV.js is ready</b>.' +
+        'You can upload an image.<br>' +
+        'The <b>imageSrc</b> is a &lt;img&gt; element used as cv.Mat input. ' +
+        'The <b>canvasOutput</b> is a &lt;canvas&gt; element used as cv.Mat output.';
+}
+
+function onOpenCvError() { // eslint-disable-line no-unused-vars
+    let element = document.getElementById('status');
+    element.setAttribute('class', 'err');
+    element.innerHTML = 'Failed to load opencv.js';
+}
+</script>
+<script async src="opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+</body>
+</html>
